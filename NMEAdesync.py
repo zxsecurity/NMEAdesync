@@ -31,7 +31,7 @@ def run_NMEAdesync():
 
     if cfg.getboolean('pps', 'pps_enabled'):
         import RPi.GPIO as GPIO
-	GPIO.setmode(GPIO.BCM)
+        GPIO.setmode(GPIO.BCM)
         outputPin = cfg.getint('pps', 'pin')
         GPIO.setup(outputPin, GPIO.OUT)
 
