@@ -19,7 +19,7 @@ import logging.config
 from datetime import datetime, timedelta
 from time import sleep
 import threading
-import RPi.GPIO as GPIO
+#import RPi.GPIO as GPIO
 
 
 __author__ = 'Karit'
@@ -30,7 +30,8 @@ __version__ = '0.1'
 def run_NMEAdesync():
 
     if cfg.getboolean('pps', 'pps_enabled'):
-        GPIO.setmode(GPIO.BCM)
+        import RPi.GPIO as GPIO
+	GPIO.setmode(GPIO.BCM)
         outputPin = cfg.getint('pps', 'pin')
         GPIO.setup(outputPin, GPIO.OUT)
 
